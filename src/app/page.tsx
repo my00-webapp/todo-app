@@ -2,6 +2,7 @@
 import { TodoInput } from "./components/TodoInput";
 import { TodoList } from "./components/TodoList";
 import { useTodos } from "./hooks/useTodos";
+import { Counter } from "./components/counter";
 
 
 export default function Page() {
@@ -17,6 +18,7 @@ return (
 
 
 <TodoList todos={todos} onToggle={toggle} onDelete={remove} onEdit={edit} />
+<Counter count={todos.filter(t=>!t.done).length} />
 </div>
 );
 }
